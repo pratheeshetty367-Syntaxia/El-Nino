@@ -1,0 +1,222 @@
+/* ===== Base & Theme Variables ===== */
+:root {
+  --deep-ocean: #0a2e42;
+  --ocean-blue: #12496b;
+  --mid-blue: #1f6f8b;
+  --teal: #2a9d8f;
+  --light-teal: #6fd1c4;
+  --foam: #e8f6f5;
+  --white: #ffffff;
+  --text-dark: #0f2a35;
+  --text-muted: #4a6b78;
+  --danger: #d64545;
+  --shadow: 0 4px 14px rgba(10, 46, 66, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background: linear-gradient(180deg, var(--foam) 0%, #ffffff 100%);
+  color: var(--text-dark);
+}
+
+/* ===== Navbar ===== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: linear-gradient(90deg, var(--deep-ocean), var(--ocean-blue));
+  color: var(--white);
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.navbar h2 {
+  margin: 0;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.75rem;
+}
+
+.nav-links a {
+  color: var(--foam);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.4rem 0.9rem;
+  border-radius: 6px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.nav-links a:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: var(--light-teal);
+}
+
+/* ===== Main content area ===== */
+.main-content {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+}
+
+/* ===== Dashboard ===== */
+.dashboard h1 {
+  color: var(--deep-ocean);
+  margin-bottom: 0.25rem;
+}
+
+.subtitle {
+  color: var(--text-muted);
+  margin-top: 0;
+  margin-bottom: 2rem;
+}
+
+section {
+  background: var(--white);
+  border-radius: 12px;
+  padding: 1.5rem 1.75rem;
+  margin-bottom: 2rem;
+  box-shadow: var(--shadow);
+}
+
+section h2 {
+  color: var(--mid-blue);
+  border-bottom: 2px solid var(--light-teal);
+  padding-bottom: 0.5rem;
+  margin-top: 0;
+}
+
+/* ===== Tables ===== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 0.75rem;
+  font-size: 0.92rem;
+}
+
+thead th {
+  background: var(--teal);
+  color: var(--white);
+  text-align: left;
+  padding: 0.7rem 0.9rem;
+  font-weight: 600;
+}
+
+thead th:first-child { border-radius: 8px 0 0 0; }
+thead th:last-child { border-radius: 0 8px 0 0; }
+
+tbody td {
+  padding: 0.6rem 0.9rem;
+  border-bottom: 1px solid #e2ecee;
+}
+
+tbody tr:nth-child(even) {
+  background: var(--foam);
+}
+
+tbody tr:hover {
+  background: #d9f0ee;
+}
+
+/* ===== SHAP plot grid ===== */
+.plot-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.plot-card {
+  text-align: center;
+  border: 1px solid #dcecec;
+  border-radius: 10px;
+  padding: 0.75rem;
+  background: var(--foam);
+}
+
+.plot-card h3 {
+  color: var(--ocean-blue);
+  margin-top: 0;
+  font-size: 1rem;
+}
+
+.plot-card img {
+  width: 100%;
+  border-radius: 6px;
+}
+
+/* ===== Predict page ===== */
+.predict-page h1 {
+  color: var(--deep-ocean);
+  margin-bottom: 0.25rem;
+}
+
+.predict-page form {
+  background: var(--white);
+  border-radius: 12px;
+  padding: 1.75rem;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  max-width: 480px;
+}
+
+.predict-page label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  font-weight: 500;
+  color: var(--text-dark);
+  font-size: 0.95rem;
+}
+
+.predict-page input,
+.predict-page select {
+  padding: 0.55rem 0.7rem;
+  border: 1.5px solid #cfe3e3;
+  border-radius: 7px;
+  font-size: 0.95rem;
+  color: var(--text-dark);
+  background: var(--foam);
+}
+
+.predict-page input:focus,
+.predict-page select:focus {
+  outline: none;
+  border-color: var(--teal);
+}
+
+.predict-page button {
+  background: linear-gradient(90deg, var(--teal), var(--mid-blue));
+  color: var(--white);
+  border: none;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.predict-page button:hover {
+  opacity: 0.9;
+}
+
+.predict-page button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* =====
