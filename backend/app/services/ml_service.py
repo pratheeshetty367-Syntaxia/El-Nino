@@ -45,8 +45,20 @@ def _load(lead: int):
  
  
 def status() -> dict:
+    artifact_dir = Path(settings.artifacts_dir).resolve()
+
     return {
-        "models": [{"lead_time": lead, "ready": _artifact(f"model_{lead}m.joblib").exists()} for lead in LEAD_TIMES],
+        "artifact_dir": str(artifact_dir),
+        "artifact_dir_exists": artifact_dir.exists(),
+        "artifact_files": sorted(p.name for p in artifact_dir.iterdir()) if artifact_dir.exists() else [],
+        "models": [
+            {
+                "lead_time": lead,
+                "path": str(_artifact(f"model_{lead}m.joblib").resolve()),
+                "ready": _artifact(f"model_{lead}m.joblib").exists(),
+            }
+            for lead in LEAD_TIMES
+        ],
         "training_results": _artifact("training_results.json").exists(),
         "baseline_results": _artifact("baseline_results.json").exists(),
     }
