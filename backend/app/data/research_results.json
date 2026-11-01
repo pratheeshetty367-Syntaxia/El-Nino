@@ -1,0 +1,422 @@
+{
+  "paper": {
+    "title": "Lead-Time Oceanic Predictor Importance Analysis for Extreme El Niño Using XGBoost and SHAP",
+    "authors": [
+      "Pratheeksha Shetty",
+      "Rakshitha P"
+    ],
+    "institution": "Department of MCA, NMAM Institute of Technology (NMAMIT), Nitte (Deemed to be University)"
+  },
+  "dataset": {
+    "records": 544,
+    "period": "January 1980 – April 2025",
+    "seasons": 45,
+    "class_distribution": {
+      "Non-Niño": 30,
+      "Normal El Niño": 12,
+      "Extreme El Niño": 3
+    },
+    "extreme_events": [
+      "1982/83",
+      "1997/98",
+      "2015/16"
+    ],
+    "thresholds": {
+      "extreme": ">= 2.0 °C",
+      "normal": ">= 0.5 °C and < 2.0 °C",
+      "non_nino": "< 0.5 °C"
+    }
+  },
+  "predictors": [
+    {
+      "name": "Sea Surface Temperature (SST)",
+      "key": "sst_anom",
+      "source": "NOAA ERSSTv6 (gridded, 2°×2°)",
+      "region": "Global, focus on equatorial Pacific",
+      "role": "Surface warming"
+    },
+    {
+      "name": "Ocean Heat Content (OHC)",
+      "key": "ohc_anom",
+      "source": "NOAA GODAS, subsurface potential temperature to 300 m",
+      "region": "Equatorial Pacific warm-water-volume box (5°S–5°N, 120°E–80°W)",
+      "role": "Subsurface heat storage"
+    },
+    {
+      "name": "Indian Ocean Dipole (IOD)",
+      "key": "iod_dmi",
+      "source": "NOAA PSL Dipole Mode Index (DMI), HadISST1.1",
+      "region": "Western minus eastern tropical Indian Ocean SST gradient",
+      "role": "Indian Ocean variability"
+    },
+    {
+      "name": "Equatorial Wind Anomalies",
+      "key": "wind_anom",
+      "source": "NCEP/NCAR Reanalysis surface zonal wind",
+      "region": "Westerly Wind Burst region (5°S–5°N, 130°E–150°W)",
+      "role": "Atmospheric forcing"
+    },
+    {
+      "name": "Tropical Atlantic SST",
+      "key": "atl_sst_anom",
+      "source": "NOAA PSL Tropical Northern Atlantic (TNA) index",
+      "region": "5.5°N–23.5°N, 15°W–57.5°W",
+      "role": "Cross-basin interaction"
+    }
+  ],
+  "lead_times": [
+    3,
+    6,
+    9,
+    12
+  ],
+  "performance": [
+    {
+      "lead_time": 3,
+      "accuracy": 95.6,
+      "recall": 0.67,
+      "precision": 1.0,
+      "extreme_detected": [
+        "1997/98",
+        "2015/16"
+      ]
+    },
+    {
+      "lead_time": 6,
+      "accuracy": 80.0,
+      "recall": 0.33,
+      "precision": 0.25,
+      "extreme_detected": [
+        "2015/16"
+      ]
+    },
+    {
+      "lead_time": 9,
+      "accuracy": 71.1,
+      "recall": 0.67,
+      "precision": 0.5,
+      "extreme_detected": [
+        "1997/98",
+        "2015/16"
+      ]
+    },
+    {
+      "lead_time": 12,
+      "accuracy": 55.6,
+      "recall": 0.0,
+      "precision": 0.0,
+      "extreme_detected": []
+    }
+  ],
+  "shap_importance": {
+    "predictors": [
+      {
+        "key": "sst_anom",
+        "name": "SST",
+        "values": {
+          "3": 1.9148,
+          "6": 0.173,
+          "9": 0.1845,
+          "12": 0.3366
+        },
+        "ranks": {
+          "3": 1,
+          "6": 4,
+          "9": 5,
+          "12": 5
+        }
+      },
+      {
+        "key": "ohc_anom",
+        "name": "OHC",
+        "values": {
+          "3": 0.0055,
+          "6": 1.568,
+          "9": 0.7051,
+          "12": 0.3418
+        },
+        "ranks": {
+          "3": 4,
+          "6": 1,
+          "9": 2,
+          "12": 4
+        }
+      },
+      {
+        "key": "iod_dmi",
+        "name": "IOD",
+        "values": {
+          "3": 0.0011,
+          "6": 0.1249,
+          "9": 0.5048,
+          "12": 0.3763
+        },
+        "ranks": {
+          "3": 5,
+          "6": 5,
+          "9": 3,
+          "12": 3
+        }
+      },
+      {
+        "key": "wind_anom",
+        "name": "Wind",
+        "values": {
+          "3": 0.0131,
+          "6": 0.4661,
+          "9": 0.7069,
+          "12": 0.6145
+        },
+        "ranks": {
+          "3": 3,
+          "6": 2,
+          "9": 1,
+          "12": 2
+        }
+      },
+      {
+        "key": "atl_sst_anom",
+        "name": "Atl. SST",
+        "values": {
+          "3": 0.0189,
+          "6": 0.2533,
+          "9": 0.4087,
+          "12": 0.7107
+        },
+        "ranks": {
+          "3": 2,
+          "6": 3,
+          "9": 4,
+          "12": 1
+        }
+      }
+    ]
+  },
+  "events": [
+    {
+      "event": "1982/83",
+      "by_lead": {
+        "3": {
+          "predictor": "SST",
+          "percent": 98.1
+        },
+        "6": {
+          "predictor": "OHC",
+          "percent": 48.3
+        },
+        "9": {
+          "predictor": "Wind",
+          "percent": 43.4
+        },
+        "12": {
+          "predictor": "Atl. SST",
+          "percent": 42.9
+        }
+      }
+    },
+    {
+      "event": "1997/98",
+      "by_lead": {
+        "3": {
+          "predictor": "SST",
+          "percent": 98.0
+        },
+        "6": {
+          "predictor": "OHC",
+          "percent": 51.1
+        },
+        "9": {
+          "predictor": "OHC",
+          "percent": 40.6
+        },
+        "12": {
+          "predictor": "Wind",
+          "percent": 43.9
+        }
+      }
+    },
+    {
+      "event": "2015/16",
+      "by_lead": {
+        "3": {
+          "predictor": "SST",
+          "percent": 98.1
+        },
+        "6": {
+          "predictor": "OHC",
+          "percent": 49.1
+        },
+        "9": {
+          "predictor": "Wind",
+          "percent": 34.8
+        },
+        "12": {
+          "predictor": "Wind",
+          "percent": 42.8
+        }
+      }
+    }
+  ],
+  "baselines": {
+    "3": [
+      {
+        "model": "XGBoost",
+        "accuracy": 0.9556,
+        "recall": 0.6667,
+        "precision": 1.0
+      },
+      {
+        "model": "Random Forest",
+        "accuracy": 1.0,
+        "recall": 1.0,
+        "precision": 1.0
+      },
+      {
+        "model": "Logistic Regression",
+        "accuracy": 0.9778,
+        "recall": 1.0,
+        "precision": 1.0
+      },
+      {
+        "model": "SVM",
+        "accuracy": 0.9778,
+        "recall": 1.0,
+        "precision": 1.0
+      },
+      {
+        "model": "LightGBM",
+        "accuracy": 0.9556,
+        "recall": 1.0,
+        "precision": 0.75
+      },
+      {
+        "model": "CatBoost",
+        "accuracy": 0.9778,
+        "recall": 1.0,
+        "precision": 1.0
+      }
+    ],
+    "6": [
+      {
+        "model": "XGBoost",
+        "accuracy": 0.8,
+        "recall": 0.3333,
+        "precision": 0.25
+      },
+      {
+        "model": "Random Forest",
+        "accuracy": 0.8667,
+        "recall": 0.3333,
+        "precision": 0.5
+      },
+      {
+        "model": "Logistic Regression",
+        "accuracy": 0.7556,
+        "recall": 0.3333,
+        "precision": 0.5
+      },
+      {
+        "model": "SVM",
+        "accuracy": 0.7333,
+        "recall": 0.3333,
+        "precision": 0.3333
+      },
+      {
+        "model": "LightGBM",
+        "accuracy": 0.7111,
+        "recall": 0,
+        "precision": 0
+      },
+      {
+        "model": "CatBoost",
+        "accuracy": 0.8667,
+        "recall": 0.3333,
+        "precision": 0.5
+      }
+    ],
+    "9": [
+      {
+        "model": "XGBoost",
+        "accuracy": 0.7111,
+        "recall": 0.6667,
+        "precision": 0.5
+      },
+      {
+        "model": "Random Forest",
+        "accuracy": 0.6222,
+        "recall": 0,
+        "precision": 0
+      },
+      {
+        "model": "Logistic Regression",
+        "accuracy": 0.7333,
+        "recall": 0.6667,
+        "precision": 0.2857
+      },
+      {
+        "model": "SVM",
+        "accuracy": 0.6222,
+        "recall": 0.6667,
+        "precision": 0.3333
+      },
+      {
+        "model": "LightGBM",
+        "accuracy": 0.5778,
+        "recall": 0.3333,
+        "precision": 0.1429
+      },
+      {
+        "model": "CatBoost",
+        "accuracy": 0.5778,
+        "recall": 0.6667,
+        "precision": 0.3333
+      }
+    ],
+    "12": [
+      {
+        "model": "XGBoost",
+        "accuracy": 0.5556,
+        "recall": 0,
+        "precision": 0
+      },
+      {
+        "model": "Random Forest",
+        "accuracy": 0.5556,
+        "recall": 0,
+        "precision": 0
+      },
+      {
+        "model": "Logistic Regression",
+        "accuracy": 0.3111,
+        "recall": 0.3333,
+        "precision": 0.0667
+      },
+      {
+        "model": "SVM",
+        "accuracy": 0.3111,
+        "recall": 0.3333,
+        "precision": 0.0556
+      },
+      {
+        "model": "LightGBM",
+        "accuracy": 0.1111,
+        "recall": 0.3333,
+        "precision": 0.0769
+      },
+      {
+        "model": "CatBoost",
+        "accuracy": 0.4889,
+        "recall": 0,
+        "precision": 0
+      }
+    ]
+  },
+  "notes": {
+    "performance": "Accuracy is high at 3 months but should be read carefully because very few Extreme El Niño samples are available.",
+    "events": "The 1982/83 event was not correctly identified at any lead time. Percentages are each predictor's share of the model output for that event.",
+    "baselines": "Evaluation is based on only three historical Extreme El Niño events, so differences between classifiers are descriptive rather than statistically conclusive."
+  }
+}
+
+
+ 

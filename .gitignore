@@ -1,22 +1,22 @@
-# Python
-__pycache__/
-*.pyc
-.venv/
-venv/
-env/
 
-# React / Node
+# Node.js
 node_modules/
 dist/
-build/
 
-# Environment variables
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Environment variables and secrets
 .env
+.env.*
+!.env.example
 
-# IDE
-.vscode/
-.idea/
+# Salesforce local metadata
+.sf/
 
-# OS
-.DS_Store
-Thumbs.db
+# Generated ML artifacts
+backend/artifacts/*
+!backend/artifacts/.gitkeep
