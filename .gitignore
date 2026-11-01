@@ -18,5 +18,10 @@ venv/
 .sf/
 
 # Generated ML artifacts
+# Generated ML artifacts
+!backend/artifacts/
 backend/artifacts/*
+!backend/artifacts/*.joblib
+!backend/artifacts/*.json
+!backend/artifacts/*.csv
 !backend/artifacts/.gitkeep

@@ -1,0 +1,245 @@
+{
+  "generated_at": "2026-10-15T16:23:15.854187+00:00",
+  "n_monthly_records": 544,
+  "n_seasons": 45,
+  "class_counts": {
+    "Non-Niño": 30,
+    "Normal El Niño": 12,
+    "Extreme El Niño": 3
+  },
+  "extreme_seasons": [
+    "1982/83",
+    "1997/98",
+    "2015/16"
+  ],
+  "leads": {
+    "3": {
+      "accuracy": 0.9555555555555556,
+      "recall": 0.6666666666666666,
+      "precision": 1.0,
+      "extreme_detected": [
+        "1997/98",
+        "2015/16"
+      ],
+      "shap_mean_abs": {
+        "sst_anom": 1.9147608280181885,
+        "ohc_anom": 0.005469801835715771,
+        "iod_dmi": 0.0010863858042284846,
+        "wind_anom": 0.013086481019854546,
+        "atl_sst_anom": 0.018854370340704918
+      },
+      "shap_rank": {
+        "sst_anom": 1,
+        "atl_sst_anom": 2,
+        "wind_anom": 3,
+        "ohc_anom": 4,
+        "iod_dmi": 5
+      },
+      "events": {
+        "1982/83": {
+          "dominant": "sst_anom",
+          "share": 98.06800842285156,
+          "shares": {
+            "sst_anom": 98.06800842285156,
+            "ohc_anom": 0.640765905380249,
+            "iod_dmi": 0.09517715871334076,
+            "wind_anom": 0.23825180530548096,
+            "atl_sst_anom": 0.9578033089637756
+          }
+        },
+        "1997/98": {
+          "dominant": "sst_anom",
+          "share": 98.03605651855469,
+          "shares": {
+            "sst_anom": 98.03605651855469,
+            "ohc_anom": 0.6405571699142456,
+            "iod_dmi": 0.09514614939689636,
+            "wind_anom": 0.238174170255661,
+            "atl_sst_anom": 0.9900640845298767
+          }
+        },
+        "2015/16": {
+          "dominant": "sst_anom",
+          "share": 98.0721435546875,
+          "shares": {
+            "sst_anom": 98.0721435546875,
+            "ohc_anom": 0.5996471643447876,
+            "iod_dmi": 0.09951519221067429,
+            "wind_anom": 0.2382618635892868,
+            "atl_sst_anom": 0.9904285073280334
+          }
+        }
+      }
+    },
+    "6": {
+      "accuracy": 0.8,
+      "recall": 0.3333333333333333,
+      "precision": 0.25,
+      "extreme_detected": [
+        "2015/16"
+      ],
+      "shap_mean_abs": {
+        "sst_anom": 0.1730201691389084,
+        "ohc_anom": 1.5680125951766968,
+        "iod_dmi": 0.1249162033200264,
+        "wind_anom": 0.4660501182079315,
+        "atl_sst_anom": 0.25329986214637756
+      },
+      "shap_rank": {
+        "ohc_anom": 1,
+        "wind_anom": 2,
+        "atl_sst_anom": 3,
+        "sst_anom": 4,
+        "iod_dmi": 5
+      },
+      "events": {
+        "1982/83": {
+          "dominant": "ohc_anom",
+          "share": 48.347599029541016,
+          "shares": {
+            "sst_anom": 7.426936149597168,
+            "ohc_anom": 48.347599029541016,
+            "iod_dmi": 5.420369625091553,
+            "wind_anom": 29.475921630859375,
+            "atl_sst_anom": 9.329171180725098
+          }
+        },
+        "1997/98": {
+          "dominant": "ohc_anom",
+          "share": 51.121036529541016,
+          "shares": {
+            "sst_anom": 21.086647033691406,
+            "ohc_anom": 51.121036529541016,
+            "iod_dmi": 4.531391143798828,
+            "wind_anom": 10.732588768005371,
+            "atl_sst_anom": 12.528329849243164
+          }
+        },
+        "2015/16": {
+          "dominant": "ohc_anom",
+          "share": 49.142234802246094,
+          "shares": {
+            "sst_anom": 14.396676063537598,
+            "ohc_anom": 49.142234802246094,
+            "iod_dmi": 1.5717188119888306,
+            "wind_anom": 22.302188873291016,
+            "atl_sst_anom": 12.58718490600586
+          }
+        }
+      }
+    },
+    "9": {
+      "accuracy": 0.7111111111111111,
+      "recall": 0.6666666666666666,
+      "precision": 0.5,
+      "extreme_detected": [
+        "1997/98",
+        "2015/16"
+      ],
+      "shap_mean_abs": {
+        "sst_anom": 0.18454313278198242,
+        "ohc_anom": 0.7051013112068176,
+        "iod_dmi": 0.5047590136528015,
+        "wind_anom": 0.7069169878959656,
+        "atl_sst_anom": 0.4086996018886566
+      },
+      "shap_rank": {
+        "wind_anom": 1,
+        "ohc_anom": 2,
+        "iod_dmi": 3,
+        "atl_sst_anom": 4,
+        "sst_anom": 5
+      },
+      "events": {
+        "1982/83": {
+          "dominant": "wind_anom",
+          "share": 43.40751647949219,
+          "shares": {
+            "sst_anom": 1.236703872680664,
+            "ohc_anom": 15.678709983825684,
+            "iod_dmi": 26.04469871520996,
+            "wind_anom": 43.40751647949219,
+            "atl_sst_anom": 13.632369041442871
+          }
+        },
+        "1997/98": {
+          "dominant": "ohc_anom",
+          "share": 40.61592102050781,
+          "shares": {
+            "sst_anom": 1.1490453481674194,
+            "ohc_anom": 40.61592102050781,
+            "iod_dmi": 17.577157974243164,
+            "wind_anom": 33.09415054321289,
+            "atl_sst_anom": 7.563724994659424
+          }
+        },
+        "2015/16": {
+          "dominant": "wind_anom",
+          "share": 34.8269157409668,
+          "shares": {
+            "sst_anom": 7.628985404968262,
+            "ohc_anom": 31.648427963256836,
+            "iod_dmi": 15.655692100524902,
+            "wind_anom": 34.8269157409668,
+            "atl_sst_anom": 10.239984512329102
+          }
+        }
+      }
+    },
+    "12": {
+      "accuracy": 0.5555555555555556,
+      "recall": 0.0,
+      "precision": 0.0,
+      "extreme_detected": [],
+      "shap_mean_abs": {
+        "sst_anom": 0.33657944202423096,
+        "ohc_anom": 0.3418092429637909,
+        "iod_dmi": 0.3762754797935486,
+        "wind_anom": 0.6144992113113403,
+        "atl_sst_anom": 0.7106517553329468
+      },
+      "shap_rank": {
+        "atl_sst_anom": 1,
+        "wind_anom": 2,
+        "iod_dmi": 3,
+        "ohc_anom": 4,
+        "sst_anom": 5
+      },
+      "events": {
+        "1982/83": {
+          "dominant": "atl_sst_anom",
+          "share": 42.9453010559082,
+          "shares": {
+            "sst_anom": 10.312663078308105,
+            "ohc_anom": 18.12016487121582,
+            "iod_dmi": 26.21970558166504,
+            "wind_anom": 2.402160882949829,
+            "atl_sst_anom": 42.9453010559082
+          }
+        },
+        "1997/98": {
+          "dominant": "wind_anom",
+          "share": 43.919551849365234,
+          "shares": {
+            "sst_anom": 10.622462272644043,
+            "ohc_anom": 13.40146541595459,
+            "iod_dmi": 7.826701641082764,
+            "wind_anom": 43.919551849365234,
+            "atl_sst_anom": 24.22982406616211
+          }
+        },
+        "2015/16": {
+          "dominant": "wind_anom",
+          "share": 42.839927673339844,
+          "shares": {
+            "sst_anom": 7.262533187866211,
+            "ohc_anom": 7.917123794555664,
+            "iod_dmi": 7.129979133605957,
+            "wind_anom": 42.839927673339844,
+            "atl_sst_anom": 34.85043716430664
+          }
+        }
+      }
+    }
+  }
+}
